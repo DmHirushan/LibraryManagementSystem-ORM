@@ -1,0 +1,142 @@
+.loginbtn{
+    -fx-background-color:
+            linear-gradient(to top right, #5ccaef, rgb(11, 158, 250));
+    -fx-background-radius: 30;
+    -fx-font-family: Gadugi;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+.loginbtn:hover {
+    -fx-background-color: #8a9bb8;
+}
+.text-field {
+    -fx-border-color: #404087;
+    -fx-border-width: 5px;
+}
+.dashboardbtn {
+    -fx-background-color: #393434;
+    -fx-effect: innershadow(gaussian, rgba(224, 208, 208, 0.2), 10, 0.5, 0, 0);
+}
+.dashboardbtn:hover {
+    -fx-background-radius: 30px;
+    -fx-background-color: #b0a9ba;
+    -fx-text-fill: black;
+    -fx-effect: innershadow(gaussian, rgba(224, 208, 208, 0.2), 10, 0.5, 0, 0);
+}
+
+.table-view {
+    -fx-background-color: #f0f0f0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #4CAF50;
+    -fx-padding: 8px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header, .table-cell {
+    -fx-padding: 6px;
+    -fx-font-size: 14px;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: black;
+}
+
+.updatebtn {
+    -fx-background-color: #6dd16d;
+    -fx-text-fill: white;
+    -fx-border-color: #52526d;
+    -fx-border-width: 2.5px;
+    -fx-border-style: dashed;
+}
+.updatebtn:hover {
+    -fx-background-color: #30ce30;
+    -fx-border-color: black;
+    -fx-border-style: solid;
+}
+.deletebtn {
+    -fx-background-color: #cb1212;
+    -fx-text-fill: white;
+    -fx-border-color: #52526d;
+    -fx-border-width: 2.5px;
+    -fx-border-style: dashed;
+}
+.deletebtn:hover {
+    -fx-background-color: #ce3042;
+    -fx-border-color: black;
+    -fx-border-style: solid;
+}
+
+.combobox {
+    -fx-background-color: #B6DBD5FF;
+    -fx-border-color: #1da344;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-border-width: 3px;
+}
+.combobox:hover {
+    -fx-background-color: rgba(224, 208, 208, 0.2);
+}
+
+.updatebtn1 {
+    -fx-background-color: yellow;
+}
+.updatebtn1:hover {
+    -fx-background-color: #b4b475;
+}
+.cancelbtn {
+    -fx-background-color: #d44a4a;
+}
+.cancelbtn:hover {
+    -fx-background-color: red;
+}
+.deletebtn1 {
+    -fx-background-color: #462727;
+    -fx-text-fill: red;
+}
+.deletebtn1:hover {
+    -fx-background-color: orange;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.addnewbooktextfields {
+    -fx-text-fill: 10002b;
+    -fx-background-color: ffcdb2;
+    -fx-border-width: 2px;
+    -fx-border-style: dotted;
+    -fx-border-color: ee9b00;
+}
+
+.comboBox {
+    -fx-background-color: 415a77;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-color: 1b263b;
+}
+.combobox:hover {
+    -fx-border-color: f5cac3;
+}
+
+.btn69:hover {
+    -fx-effect: dropshadow(gaussian, rgba(18, 186, 224), 1,1,1,1);;
+}
+
+.libraryBtn {
+    -fx-background-color: black;
+}
+.libraryBtn:hover {
+    -fx-background-color: #1b5f05;
+    -fx-text-fill: white;
+}
+
+
