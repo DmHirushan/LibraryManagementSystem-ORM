@@ -51,7 +51,7 @@
          </font>
       </Label>
       <TextField fx:id="txtUsername" layoutX="1124.0" layoutY="276.0" prefHeight="31.0" prefWidth="229.0" />
-      <TextField fx:id="txtPassword" layoutX="1124.0" layoutY="355.0" prefHeight="31.0" prefWidth="229.0" />
+      <TextField fx:id="txtPassword" layoutX="1124.0" layoutY="355.0" onAction="#txtPasswordOnAction" prefHeight="31.0" prefWidth="229.0" />
       <Button layoutX="1084.0" layoutY="443.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="31.0" prefWidth="154.0" styleClass="loginbtn" stylesheets="@../styles.css" text="Login">
          <cursor>
             <Cursor fx:constant="HAND" />

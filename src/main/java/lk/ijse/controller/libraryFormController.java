@@ -27,6 +27,7 @@ public class libraryFormController {
     public TableColumn colPublicDate;
     public TableColumn colStatus;
     public TableView tblBooks;
+    public TableColumn colQty;
     Stage stage = new Stage();
     BookService bookService = (BookService) ServiceFactory.getServiceFactory().getService(ServiceFactory.ServiceTypes.BOOK);
 
@@ -41,7 +42,7 @@ public class libraryFormController {
         colGenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
         colIsbn.setCellValueFactory(new PropertyValueFactory<>("isbn"));
         colPublicDate.setCellValueFactory(new PropertyValueFactory<>("publicationDate"));
-        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
     }
 
     public void btnNewOnAction(ActionEvent actionEvent) throws IOException {

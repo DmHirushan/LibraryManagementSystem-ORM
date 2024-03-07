@@ -13,6 +13,7 @@ import lk.ijse.entity.Book;
 import lk.ijse.service.BookService;
 import lk.ijse.service.ServiceFactory;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class AddNewBookFormController {
@@ -24,6 +25,7 @@ public class AddNewBookFormController {
     public RadioButton rbAvailable;
     public RadioButton rbNotAvailable;
     public ComboBox cmbStatus;
+    public ComboBox cmbQty;
     BookService bookService = (BookService) ServiceFactory.getServiceFactory().getService(ServiceFactory.ServiceTypes.BOOK);
 
     public void initialize(){
@@ -37,7 +39,7 @@ public class AddNewBookFormController {
                 String.valueOf(cmbGenre.getValue()),
                 Integer.parseInt(txtIsbn.getText()),
                 datePicker.getValue(),
-                String.valueOf(cmbStatus.getValue())
+                Integer.parseInt(String.valueOf(cmbQty.getValue()))
         ));
     }
 
@@ -55,8 +57,10 @@ public class AddNewBookFormController {
 
     public void setValuesToStatusComboBox(){
         ObservableList<String> obList = FXCollections.observableArrayList();
-        obList.add("Available");
-        obList.add("Not Available");
-        cmbStatus.setItems(obList);
+        int [] qty = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        for (int x : qty){
+            obList.add(String.valueOf(x));
+        }
+        cmbQty.setItems(obList);
     }
 }

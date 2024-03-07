@@ -40,7 +40,7 @@ public class BookUpdateFormController {
         bookDto.setAuthor(txtAuthor.getText());
         bookDto.setGenre(txtGenre.getText());
         bookDto.setPublicationDate(datePicker.getValue());
-        bookDto.setStatus((String) cmbStatus.getValue());
+        bookDto.setQty(Integer.parseInt((String) cmbStatus.getValue()));
         return bookDto;
     }
 
@@ -61,7 +61,7 @@ public class BookUpdateFormController {
         txtGenre.setText(bookDto.getGenre());
         lblIsbn.setText(String.valueOf(bookDto.getIsbn()));
         datePicker.setValue(bookDto.getPublicationDate());
-        cmbStatus.setValue(bookDto.getStatus());
+        cmbStatus.setValue(bookDto.getQty());
     }
     private long split(String value){
         String[] parts = value.split(" ");

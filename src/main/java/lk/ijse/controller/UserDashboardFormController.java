@@ -15,6 +15,7 @@ public class UserDashboardFormController {
 
     public void initialize(){
         DateAndTime.manageDateAndTime(lblDateAndTime);
+
     }
 
     public void btnLibraryOnAction(ActionEvent actionEvent) throws IOException {
@@ -25,5 +26,9 @@ public class UserDashboardFormController {
         Parent fxml = FXMLLoader.load(getClass().getResource("/view/"+location+".fxml"));
         contentContext.getChildren().removeAll();
         contentContext.getChildren().setAll(fxml);
+    }
+
+    public void btnImOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("userDetailForm");
     }
 }

@@ -9,7 +9,8 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,8 +31,16 @@ public class Book implements Serializable {
     private long isbn;
     @Column(name = "publication_date")
     private LocalDate publicationDate;
-    @Column(name = "availability_status")
-    private String status;
+    @Column
+    private int qty;
+
+    /*@ManyToMany(mappedBy = "books")
+    private List<Orders> orders = new ArrayList<>();*/
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "book")
+    private List<OrderDetail> orderDetailList = new ArrayList<>();
+
+
 
     public BookDto toDto(){
         BookDto bookDto = new BookDto();
@@ -40,7 +49,8 @@ public class Book implements Serializable {
         bookDto.setGenre(this.genre);
         bookDto.setIsbn(this.isbn);
         bookDto.setPublicationDate(this.publicationDate);
-        bookDto.setStatus(this.status);
+        bookDto.setQty(this.qty);
+        //bookDto.setStatus(this.status);
         return bookDto;
     }
 

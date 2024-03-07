@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="768.0" prefWidth="1480.0" style="-fx-background-color: black; -fx-border-color: green; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UserDashboardFormController">
    <children>
       <Separator layoutX="10.0" layoutY="75.0" prefHeight="3.0" prefWidth="1455.0" />
@@ -26,5 +25,13 @@
          </cursor>
       </Button>
       <AnchorPane fx:id="contentContext" layoutX="235.0" layoutY="78.0" prefHeight="676.0" prefWidth="1230.0" />
+      <Button layoutX="28.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnImOnAction" opacity="0.95" prefHeight="70.0" prefWidth="163.0" style="-fx-border-color: white; -fx-border-width: 5px; -fx-border-radius: 20px;" styleClass="libraryBtn" stylesheets="@../styles.css" text="I'M" textFill="#96bca4">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

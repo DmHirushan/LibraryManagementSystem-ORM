@@ -19,15 +19,15 @@ public class BookDto implements Serializable {
     private String genre;
     private long isbn;
     private LocalDate publicationDate;
-    private String status;
+    private int qty;
 
-    public BookDto(String title, String author, String genre, int isbn, LocalDate publicationDate, String status) {
+    public BookDto(String title, String author, String genre, int isbn, LocalDate publicationDate, int qty) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.isbn = isbn;
         this.publicationDate = publicationDate;
-        this.status = status;
+        this.qty = qty;
     }
 
     public Book toEntity(){
@@ -37,7 +37,7 @@ public class BookDto implements Serializable {
         book.setGenre(this.genre);
         book.setIsbn(this.isbn);
         book.setPublicationDate(this.publicationDate);
-        book.setStatus(this.status);
+        book.setQty(this.qty);
         return book;
     }
 }

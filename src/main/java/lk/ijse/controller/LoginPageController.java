@@ -28,6 +28,7 @@ public class LoginPageController {
     public TextField txtUsername;
     public TextField txtPassword;
     public AnchorPane loginPageContext;
+    public static String username;
     LoginService loginService = (LoginService) ServiceFactory.getServiceFactory().getService(ServiceFactory.ServiceTypes.LOGIN);
     CustomerService customerService = (CustomerService) ServiceFactory.getServiceFactory().getService(ServiceFactory.ServiceTypes.CUSTOMER);
 
@@ -56,6 +57,7 @@ public class LoginPageController {
     }*/
 
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
+        username = txtUsername.getText();
         if (txtUsername.equals(null) || txtUsername.getText().equals("admin")){
             Stage stage = (Stage) loginPageContext.getScene().getWindow();
             stage.setScene(
@@ -77,11 +79,15 @@ public class LoginPageController {
 
     public boolean checkExists(String username){
         boolean x = customerService.isExists(username);
-        System.out.println(x);
+        //System.out.println(x);
         return x;
     }
     public boolean getUser(String username, String password){
         CustomerDto customerDto = customerService.getCustomerUsingUsername(username);
         return customerDto.getPassword().equals(password);
+    }
+
+    public void txtPasswordOnAction(ActionEvent actionEvent) throws IOException {
+        btnLoginOnAction(actionEvent);
     }
 }

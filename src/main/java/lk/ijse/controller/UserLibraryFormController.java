@@ -50,13 +50,16 @@ public class UserLibraryFormController {
             JFXButton purchase = new JFXButton("Purchase");
             purchase.setStyle("-fx-background-color: #5ee65e; -fx-text-fill: white; ");
             purchase.setCursor(Cursor.HAND);
+            if (bookDto.getQty()==0){
+                purchase.setOpacity(0.3);
+            }
             obList.add(new BookTm(
                     bookDto.getTitle(),
                     bookDto.getAuthor(),
                     bookDto.getGenre(),
                     bookDto.getIsbn(),
                     bookDto.getPublicationDate(),
-                    bookDto.getStatus(),
+                    bookDto.getQty()!=0 ? "Available" : "Not Available",
                     purchase
             ));
         }
