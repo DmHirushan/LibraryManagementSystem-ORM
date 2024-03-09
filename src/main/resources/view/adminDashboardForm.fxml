@@ -41,5 +41,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Button layoutX="26.0" layoutY="401.0" mnemonicParsing="false" onAction="#btnBranchesOnAction" onMouseClicked="#btnCustomerClicked" onMouseReleased="#btnCustomerReleased" prefHeight="55.0" prefWidth="165.0" styleClass="dashboardbtn" stylesheets="@../styles.css" text="Branches" textFill="WHITE">
+         <font>
+            <Font name="Sitka Text" size="26.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

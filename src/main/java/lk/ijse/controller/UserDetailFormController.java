@@ -1,20 +1,23 @@
 package lk.ijse.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.dto.BookDto;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.projection.BookIdsAndTitles;
 import lk.ijse.service.BookService;
 import lk.ijse.service.CustomerService;
 import lk.ijse.service.ServiceFactory;
+import lk.ijse.tmList.CartTm;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public class UserDetailFormController {
     public Label lblName;
@@ -33,6 +36,7 @@ public class UserDetailFormController {
     public TableColumn colGenre;
     public TableColumn colIsbn;
     public TableColumn colOption;
+    private int x=0;
     private ObservableList obList = FXCollections.observableArrayList();
 
     CustomerService customerService = (CustomerService) ServiceFactory.getServiceFactory().getService(ServiceFactory.ServiceTypes.CUSTOMER);
@@ -41,6 +45,16 @@ public class UserDetailFormController {
     public void initialize(){
         loadIdsAndTitles();
         setName(LoginPageController.username);
+        setCellValueFactory();
+    }
+    private void setCellValueFactory() {
+        colNo.setCellValueFactory(new PropertyValueFactory<>("no"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
+        colGenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        colIsbn.setCellValueFactory(new PropertyValueFactory<>("isbn"));
+        colPublicationDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colOption.setCellValueFactory(new PropertyValueFactory<>("button"));
     }
 
     private void setName(String username) {
@@ -75,6 +89,40 @@ public class UserDetailFormController {
     }
 
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
+        JFXButton remove = new JFXButton("Remove");
+        remove.setOnAction((e) -> {
+            ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
+            ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
 
+            Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+
+            if (type.orElse(no) == yes) {
+                int index = tblCart.getSelectionModel().getSelectedIndex();
+                obList.remove(index);
+                tblCart.refresh();
+            }
+        });
+
+        for (int i = 0; i < tblCart.getItems().size(); i++) {
+            if (lblIsbn.equals(colIsbn.getCellData(i))) {
+                new Alert(Alert.AlertType.WARNING, "You can't borrow same book twice..").show();
+                return;
+            }
+        }
+
+
+        obList.add(new CartTm(
+                ++x,
+                lblTitle.getText(),
+                lblAuthor.getText(),
+                LocalDate.parse(lblPublicationDate.getText()),
+                lblGenre.getText(),
+                Integer.parseInt(lblIsbn.getText()),
+                remove
+        ));
+        tblCart.setItems(obList);
+    }
+
+    public void btnGetOnAction(ActionEvent actionEvent) {
     }
 }

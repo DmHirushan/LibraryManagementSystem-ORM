@@ -74,5 +74,10 @@
             <TableColumn fx:id="colOption" prefWidth="155.0" text="Option" />
         </columns>
       </TableView>
+      <Button layoutX="1111.0" layoutY="627.0" mnemonicParsing="false" onAction="#btnGetOnAction" prefHeight="35.0" prefWidth="98.0" text="Get">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

@@ -35,6 +35,11 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
+    public void decreaseBook() {
+
+    }
+
+    @Override
     public Long save(Book book) {
         return (Long) session.save(book);
 

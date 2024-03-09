@@ -11,4 +11,5 @@ public interface BookRepository extends CrudRepository <Book, Long>{
     public void setSession(Session session);
     public List<Book> getAllBooks();
     public List<BookIdsAndTitles> getIdsAndTitles();
+    public void decreaseBook();
 }

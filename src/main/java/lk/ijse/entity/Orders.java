@@ -1,5 +1,6 @@
 package lk.ijse.entity;
 
+import lk.ijse.dto.OrdersDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -45,5 +46,19 @@ public class Orders {
     public Orders(LocalDate date, LocalDate dueDate){
         this.date=date;
         this.dueDate=dueDate;
+    }
+
+    public Orders(LocalDate date, LocalDate dueDate, Customer customer){
+        this.date=date;
+        this.dueDate=dueDate;
+        this.customer=customer;
+    }
+
+    public void toDto(){
+        OrdersDto ordersDto = new OrdersDto();
+        ordersDto.setOrderId(orderId);
+        ordersDto.setDate(date);
+        ordersDto.setDueDate(dueDate);
+        ordersDto.setCustomer(customer);
     }
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="653.0" prefWidth="1041.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BranchFormController">
+   <children>
+      <Label layoutX="29.0" layoutY="26.0" prefHeight="54.0" prefWidth="158.0" text="Branches" textFill="WHITE">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="145.0" prefHeight="46.0" prefWidth="241.0" text="Branch Name" textFill="#48cd0a">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextField layoutX="252.0" layoutY="146.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

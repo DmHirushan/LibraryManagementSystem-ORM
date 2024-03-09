@@ -30,7 +30,7 @@
             <Font size="20.0" />
          </font>
       </Hyperlink>
-      <Label layoutX="25.0" layoutY="37.0" prefHeight="107.0" prefWidth="943.0" text="Library Management System" textFill="#464141">
+      <Label layoutX="25.0" layoutY="37.0" prefHeight="107.0" prefWidth="943.0" styleClass="lmslabel" stylesheets="@../styles.css" text="Library Management System" textFill="#464141">
          <font>
             <Font size="73.0" />
          </font>

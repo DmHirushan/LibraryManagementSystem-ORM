@@ -139,4 +139,28 @@
     -fx-text-fill: white;
 }
 
+/*.lmslabel {
+    -fx-font-size: 24px; !* Set the font size as needed *!
+    -fx-text-fill: black; !* Set the text color *!
+
+    -fx-background-insets: 0, 1; !* Add a slight border around the text *!
+    -fx-background-radius: 2px; !* Set the border radius *!
+    -fx-padding: 5px; !* Add padding around the text *!
+    -fx-border-color: black; !* Set the border color *!
+    -fx-border-width: 1px; !* Set the border width *!
+    -fx-border-radius: 2px; !* Set the border radius *!
+    -fx-border-style: solid; !* Set the border style *!
+    -fx-animation: shine 1s infinite alternate; !* Apply the animation *!
+}
+
+@keyframes shine {
+    0% {
+        -fx-background-color: linear-gradient(to right, yellow, orange); !* Start color *!
+    }
+    100% {
+        -fx-background-color: linear-gradient(to right, orange, yellow); !* End color *!
+    }
+}*/
+
+
 

@@ -52,4 +52,7 @@ public class AdminDashboardFormController {
     public void btnLibraryOnAction(ActionEvent actionEvent) throws IOException {
         setUi("libraryForm");
     }
+
+    public void btnBranchesOnAction(ActionEvent actionEvent) {
+    }
 }
