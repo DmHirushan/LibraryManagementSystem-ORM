@@ -77,5 +77,11 @@
       </Button>
       <Label layoutX="21.0" layoutY="555.0" prefHeight="21.0" prefWidth="154.0" text="*All fields are required" textFill="RED" />
       <ComboBox fx:id="cmbQty" layoutX="750.0" layoutY="43.0" prefWidth="150.0" styleClass="comboBox" stylesheets="@../styles.css" />
+      <Button layoutX="753.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnChooseImageOnAction" style="-fx-background-color: lack;" styleClass="imagechoosbtn" stylesheets="@../styles.css" text="Select book cover" textFill="#bad79f">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="lblPath" layoutX="267.0" layoutY="545.0" text="Label" />
    </children>
 </AnchorPane>

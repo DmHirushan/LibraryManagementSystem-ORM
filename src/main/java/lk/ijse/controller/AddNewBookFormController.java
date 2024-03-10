@@ -3,16 +3,19 @@ package lk.ijse.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import lk.ijse.dto.BookDto;
 import lk.ijse.entity.Book;
 import lk.ijse.service.BookService;
 import lk.ijse.service.ServiceFactory;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -26,6 +29,8 @@ public class AddNewBookFormController {
     public RadioButton rbNotAvailable;
     public ComboBox cmbStatus;
     public ComboBox cmbQty;
+    public Label lblPath;
+    private byte[] path;
     BookService bookService = (BookService) ServiceFactory.getServiceFactory().getService(ServiceFactory.ServiceTypes.BOOK);
 
     public void initialize(){
@@ -39,7 +44,8 @@ public class AddNewBookFormController {
                 String.valueOf(cmbGenre.getValue()),
                 Integer.parseInt(txtIsbn.getText()),
                 datePicker.getValue(),
-                Integer.parseInt(String.valueOf(cmbQty.getValue()))
+                Integer.parseInt(String.valueOf(cmbQty.getValue())),
+                path
         ));
     }
 
@@ -62,5 +68,22 @@ public class AddNewBookFormController {
             obList.add(String.valueOf(x));
         }
         cmbQty.setItems(obList);
+    }
+
+    public void btnChooseImageOnAction(ActionEvent actionEvent) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif", "*.jpeg")
+        );
+
+        // Show the file chooser dialog
+        File selectedFile = fileChooser.showOpenDialog(new Stage());
+
+        // Get the selected image path
+        if (selectedFile != null) {
+            String imagePath = selectedFile.getAbsolutePath();
+            System.out.println("Selected image path: " + imagePath);
+            path = Files.readAllBytes(Path.of(imagePath));
+        }
     }
 }

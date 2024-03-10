@@ -162,5 +162,13 @@
     }
 }*/
 
+.imagechoosbtn:hover {
+    -fx-text-fill: #d88787;
+}
+.image {
+    -fx-border-width: 2px;
+    -fx-border-color: green;
+}
+
 
 

@@ -20,6 +20,7 @@ public class BookDto implements Serializable {
     private long isbn;
     private LocalDate publicationDate;
     private int qty;
+    private byte[] imageData;
 
     public BookDto(String title, String author, String genre, int isbn, LocalDate publicationDate, int qty) {
         this.title = title;
@@ -38,6 +39,7 @@ public class BookDto implements Serializable {
         book.setIsbn(this.isbn);
         book.setPublicationDate(this.publicationDate);
         book.setQty(this.qty);
+        book.setImageData(this.imageData);
         return book;
     }
 }

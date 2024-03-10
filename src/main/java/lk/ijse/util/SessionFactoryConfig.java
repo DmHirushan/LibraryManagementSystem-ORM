@@ -24,6 +24,7 @@ public class SessionFactoryConfig {
                 .addAnnotatedClass(OrderDetail.class)
                 .addAnnotatedClass(Returns.class)
                 .addAnnotatedClass(ReturnDetail.class)
+                .addAnnotatedClass(Image.class)
                 .buildSessionFactory();
     }
 

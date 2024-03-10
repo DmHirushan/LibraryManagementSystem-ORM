@@ -1,13 +1,16 @@
 package lk.ijse.entity;
 
+import jdk.jfr.Timestamp;
 import lk.ijse.dto.OrdersDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +26,14 @@ public class Orders {
     @Column(name = "order_id")
     private long orderId;
     @Column(name = "order_date_time")
-    private LocalDate date;
+    @CreationTimestamp
+    private LocalDateTime dateTime;
     @Column(name = "due_date")
     private LocalDate dueDate;
+    @Column
+    private LocalDate returnedDate;
+    @Column
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "cus_id")
@@ -37,19 +45,22 @@ public class Orders {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "order")
     private List<OrderDetail> orderDetailList = new ArrayList<>();
 
-    public Orders(long orderId, LocalDate date, LocalDate dueDate){
+    public Orders(long orderId, LocalDate dueDate, Customer customer, LocalDate returnedDate, String status){
         this.orderId=orderId;
-        this.date=date;
+        this.dueDate=dueDate;
+        this.customer=customer;
+        this.returnedDate=returnedDate;
+        this.status=status;
+
+    }
+
+    public Orders(LocalDateTime dateTime, LocalDate dueDate){
+        this.dateTime=dateTime;
         this.dueDate=dueDate;
     }
 
-    public Orders(LocalDate date, LocalDate dueDate){
-        this.date=date;
-        this.dueDate=dueDate;
-    }
-
-    public Orders(LocalDate date, LocalDate dueDate, Customer customer){
-        this.date=date;
+    public Orders(LocalDateTime dateTime, LocalDate dueDate, Customer customer){
+        this.dateTime=dateTime;
         this.dueDate=dueDate;
         this.customer=customer;
     }
@@ -57,7 +68,7 @@ public class Orders {
     public void toDto(){
         OrdersDto ordersDto = new OrdersDto();
         ordersDto.setOrderId(orderId);
-        ordersDto.setDate(date);
+        //ordersDto.setDate(dateTime);
         ordersDto.setDueDate(dueDate);
         ordersDto.setCustomer(customer);
     }

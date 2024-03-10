@@ -12,7 +12,7 @@ public class OrderDetailRepositoryImpl implements OrderDetailRepository {
     }
     @Override
     public Long save(OrderDetail orderDetail) {
-        return (Long) session.save(orderDetail);
+        return null;
     }
 
     @Override
@@ -28,5 +28,11 @@ public class OrderDetailRepositoryImpl implements OrderDetailRepository {
     @Override
     public void delete(OrderDetail object) {
 
+    }
+
+    @Override
+    public boolean saveOrderDetail(OrderDetail orderDetail) {
+        session.save(orderDetail);
+        return true;
     }
 }
