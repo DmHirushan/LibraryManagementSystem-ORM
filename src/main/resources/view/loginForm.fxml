@@ -25,7 +25,7 @@
          </image>
       </ImageView>
       <Separator layoutX="976.0" layoutY="197.0" prefHeight="0.0" prefWidth="377.0" />
-      <Hyperlink fx:id="hyperlinkDontHaveAccount" layoutX="995.0" layoutY="593.0" onAction="#hyperlinkSignInOnAction" prefHeight="40.0" prefWidth="214.0" text="Don't have account?">
+      <Hyperlink fx:id="hyperlinkDontHaveAccount" layoutX="980.0" layoutY="593.0" onAction="#hyperlinkSignInOnAction" prefHeight="40.0" prefWidth="214.0" text="Don't have account?">
          <font>
             <Font size="20.0" />
          </font>
@@ -52,7 +52,7 @@
       </Label>
       <TextField fx:id="txtUsername" layoutX="1124.0" layoutY="276.0" prefHeight="31.0" prefWidth="229.0" />
       <TextField fx:id="txtPassword" layoutX="1124.0" layoutY="355.0" onAction="#txtPasswordOnAction" prefHeight="31.0" prefWidth="229.0" />
-      <Button layoutX="1084.0" layoutY="443.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="31.0" prefWidth="154.0" styleClass="loginbtn" stylesheets="@../styles.css" text="Login">
+      <Button layoutX="1084.0" layoutY="483.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="31.0" prefWidth="154.0" styleClass="loginbtn" stylesheets="@../styles.css" text="Login">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -62,5 +62,10 @@
             <Font name="System Bold Italic" size="28.0" />
          </font>
       </Label>
+      <Hyperlink fx:id="hyperlinkDontHaveAccount1" layoutX="972.0" layoutY="424.0" onAction="#hyperlinkForgetPasswordOnAction" prefHeight="40.0" prefWidth="186.0" text="Forget Password?">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>

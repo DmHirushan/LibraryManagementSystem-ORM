@@ -17,13 +17,13 @@ public class AdminDashboardFormController {
     public AnchorPane contentContext;
     public Button btnHomeOnAction;
 
-    public void initialize(){
+    public void initialize() throws IOException {
         DateAndTime.manageDateAndTime(lblDateAndTime);
+        setUi("userDashbordContentForm");
     }
 
     public void btnCustomerOnAction(ActionEvent actionEvent) throws IOException {
         setUi("customerForm");
-        setUi("userDashbordContentForm");
     }
 
 
@@ -57,5 +57,9 @@ public class AdminDashboardFormController {
 
     public void btnBranchesOnAction(ActionEvent actionEvent) throws IOException {
         setUi("branchForm");
+    }
+
+    public void btnNotReturned(ActionEvent actionEvent) throws IOException {
+        setUi("notReturnedForm");
     }
 }

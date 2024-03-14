@@ -129,4 +129,11 @@ public class LoginPageController {
     public static void  closeStage(){
         stage.close();
     }
+
+    public void hyperlinkForgetPasswordOnAction(ActionEvent actionEvent) throws IOException {
+        stage = (Stage) loginPageContext.getScene().getWindow();
+        stage.setScene(
+                new Scene(FXMLLoader.load(getClass().getResource("/view/forgetPasswordForm.fxml")))
+        );
+    }
 }

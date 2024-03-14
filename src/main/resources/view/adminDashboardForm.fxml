@@ -49,5 +49,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Button layoutX="26.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnNotReturned" onMouseClicked="#btnCustomerClicked" onMouseReleased="#btnCustomerReleased" prefHeight="55.0" prefWidth="165.0" styleClass="dashboardbtn" stylesheets="@../styles.css" text="Not-Returned" textFill="WHITE">
+         <font>
+            <Font name="Sitka Text" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>
