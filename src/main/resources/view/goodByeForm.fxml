@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="171.0" prefWidth="390.0" style="-fx-background-color: #0b2959;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.GoodByeFormController">
+   <children>
+      <Label layoutX="144.0" layoutY="63.0" prefHeight="51.0" prefWidth="212.0" text="GOOD BYE!" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgHand" fitHeight="90.0" fitWidth="97.0" layoutX="29.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-waving-hand-emoji-48.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

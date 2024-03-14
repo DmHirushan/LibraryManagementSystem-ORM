@@ -51,6 +51,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
+    public Long getCustomerCount() {
+        Query query = session.createQuery("select count(*) from Customer ");
+        return (Long) query.uniqueResult();
+    }
+
+    @Override
     public Long save(Customer customer) {
         return (Long) session.save(customer);
     }

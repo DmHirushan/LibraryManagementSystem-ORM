@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="171.0" prefWidth="390.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoggedOutFormController">
+   <children>
+      <ImageView fx:id="imgLoading" fitHeight="89.0" fitWidth="93.0" layoutX="64.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-loading-50.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="189.0" layoutY="71.0" prefHeight="45.0" prefWidth="134.0" text="Logged In" textFill="#1aff7d">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

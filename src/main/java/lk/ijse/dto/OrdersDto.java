@@ -17,14 +17,17 @@ public class OrdersDto {
     private LocalDate date;
     private LocalDate dueDate;
     private String status;
+    private LocalDate returnedDate;
     private Customer customer;
 
-    public void toEntity(){
+    public Orders toEntity(){
         Orders orders = new Orders();
         orders.setOrderId(orderId);
-        //orders.setDate(date);
+        orders.setDateTime(date.atStartOfDay());
         orders.setDueDate(dueDate);
         orders.setStatus(status);
+        orders.setReturnedDate(returnedDate);
         orders.setCustomer(customer);
+        return orders;
     }
 }

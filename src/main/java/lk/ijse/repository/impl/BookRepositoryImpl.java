@@ -3,6 +3,7 @@ package lk.ijse.repository.impl;
 import lk.ijse.dto.BookDto;
 import lk.ijse.entity.Book;
 import lk.ijse.projection.BookIdsAndTitles;
+import lk.ijse.projection.BookTitles;
 import lk.ijse.repository.BookRepository;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -38,6 +39,30 @@ public class BookRepositoryImpl implements BookRepository {
     public void decreaseBook() {
 
     }
+
+    @Override
+    public List<BookTitles> getTitles() {
+        String sqlQuery = "SELECT new lk.ijse.projection.BookTitles (B.title) FROM Book AS B";
+        Query query = session.createQuery(sqlQuery);
+        List list = query.list();
+        session.close();
+        return list;
+    }
+
+    @Override
+    public Long getIdByTitle(String title) {
+        String sqlQuery = "SELECT b.id FROM Book b WHERE b.title = :title";
+        Query query = session.createQuery(sqlQuery);
+        query.setParameter("title", title);
+        return (long) query.uniqueResult();
+    }
+
+    @Override
+    public Long getBookCount() {
+        Query query = session.createQuery("select count(*) from Book ");
+        return (Long) query.uniqueResult();
+    }
+
 
     @Override
     public Long save(Book book) {

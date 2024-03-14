@@ -11,16 +11,18 @@ public class RepositoryFactory {
     }
 
     public enum RepositoryTypes{
-        LOGIN, CUSTOMER, BOOK, ORDER, ORDER_DETAIL
+        ADMIN, LOGIN, CUSTOMER, BOOK, ORDER, ORDER_DETAIL, BRANCH
     }
 
     public SuperRepository getRepository(RepositoryTypes repositoryTypes){
         switch (repositoryTypes){
+            case ADMIN: return new AdminRepositoryImpl();
             case LOGIN: return new LoginRepositoryImpl();
             case CUSTOMER: return new CustomerRepositoryImpl();
             case BOOK: return new BookRepositoryImpl();
             case ORDER: return new OrderRepositoryImpl();
             case ORDER_DETAIL: return new OrderDetailRepositoryImpl();
+            case BRANCH: return new BranchRepositoryImpl();
             default:return null;
         }
     }

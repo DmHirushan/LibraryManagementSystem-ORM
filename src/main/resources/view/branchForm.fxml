@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="653.0" prefWidth="1041.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BranchFormController">
    <children>
@@ -13,15 +16,36 @@
             <Font size="37.0" />
          </font>
       </Label>
-      <Label layoutX="35.0" layoutY="145.0" prefHeight="46.0" prefWidth="241.0" text="Branch Name" textFill="#48cd0a">
+      <Label layoutX="42.0" layoutY="423.0" prefHeight="46.0" prefWidth="183.0" text="Branch Name" textFill="#48cd0a">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <TextField layoutX="252.0" layoutY="146.0">
+      <TextField fx:id="txtBranchName" layoutX="259.0" layoutY="424.0">
          <font>
             <Font size="21.0" />
          </font>
       </TextField>
+      <Label layoutX="43.0" layoutY="524.0" prefHeight="46.0" prefWidth="167.0" text="City" textFill="#48cd0a">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCity" layoutX="258.0" layoutY="528.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="tblBranches" layoutX="271.0" layoutY="118.0" prefHeight="200.0" prefWidth="484.0">
+        <columns>
+          <TableColumn fx:id="colBranchId" prefWidth="113.0" text="Branch ID" />
+          <TableColumn fx:id="colBranchName" prefWidth="231.0" text="Branch Name" />
+            <TableColumn fx:id="colCity" prefWidth="139.0" text="City" />
+        </columns>
+      </TableView>
+      <Separator layoutY="363.0" prefHeight="9.0" prefWidth="1042.0" style="-fx-background-color: blue;" />
+      <Button layoutX="609.0" layoutY="599.0" mnemonicParsing="false" onAction="#btnAddOnAction" text="Add" />
+      <Button layoutX="699.0" layoutY="599.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
+      <Button layoutX="801.0" layoutY="599.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
    </children>
 </AnchorPane>

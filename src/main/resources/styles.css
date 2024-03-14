@@ -169,6 +169,14 @@
     -fx-border-width: 2px;
     -fx-border-color: green;
 }
+.searchTextField {
+    -fx-text-fill: white;
+}
+
+.totalBookCountLabel {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, #6d726d, 10, 2, 0, 0);
+}
 
 
 

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -27,7 +29,7 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="417.0" layoutY="129.0" prefHeight="35.0" prefWidth="118.0" text="see details..">
+      <Hyperlink layoutX="417.0" layoutY="129.0" onAction="#hyperLinkSeeDetailsOnAction" prefHeight="35.0" prefWidth="118.0" text="see details..">
          <font>
             <Font size="18.0" />
          </font>
@@ -58,22 +60,42 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Button layoutX="1078.0" layoutY="608.0" mnemonicParsing="false" onAction="#btnGetOnAction" prefHeight="35.0" prefWidth="98.0" text="Get">
+      <Button fx:id="btnGet" layoutX="1078.0" layoutY="608.0" mnemonicParsing="false" onAction="#btnGetOnAction" prefHeight="35.0" prefWidth="98.0" text="Get">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="715.0" layoutY="207.0" text="Return Date :  " textFill="RED">
+      <Label layoutX="714.0" layoutY="129.0" text="Return Date :  " textFill="RED">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <DatePicker fx:id="returnDatePicker" layoutX="902.0" layoutY="206.0" prefHeight="36.0" prefWidth="257.0" />
-      <Label fx:id="lblOrderId" layoutX="1078.0" layoutY="127.0" prefHeight="34.0" prefWidth="98.0" textFill="#0900ff">
+      <DatePicker fx:id="returnDatePicker" layoutX="902.0" layoutY="129.0" prefHeight="36.0" prefWidth="257.0" />
+      <Label fx:id="lblOrderId" layoutX="1061.0" layoutY="33.0" opacity="0.0" prefHeight="34.0" prefWidth="98.0" textFill="#0900ff">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <ImageView fx:id="bookImageView" fitHeight="341.0" fitWidth="291.0" layoutX="546.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookImageView" fitHeight="341.0" fitWidth="291.0" layoutX="476.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXTextField fx:id="txtSearch" focusColor="WHITE" layoutX="574.0" layoutY="196.0" onAction="#txtSearchOnAction" prefHeight="34.0" prefWidth="391.0" styleClass="searchTextField" stylesheets="@../styles.css" unFocusColor="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextField>
+      <Button layoutX="976.0" layoutY="208.0" mnemonicParsing="false" onAction="#btnSearchOnAction" opacity="0.54" prefHeight="31.0" prefWidth="109.0" text="Search">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="31.0" fitWidth="25.0" layoutX="978.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-search-50.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblStatus" layoutX="773.0" layoutY="332.0" prefHeight="43.0" prefWidth="411.0" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

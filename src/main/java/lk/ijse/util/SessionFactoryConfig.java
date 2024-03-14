@@ -18,6 +18,7 @@ public class SessionFactoryConfig {
     private SessionFactoryConfig() {
         sessionFactory = new Configuration()
                 .mergeProperties(Utility.getProperties())
+                .addAnnotatedClass(Admin.class)
                 .addAnnotatedClass(Customer.class)
                 .addAnnotatedClass(Book.class)
                 .addAnnotatedClass(Orders.class)
@@ -25,6 +26,7 @@ public class SessionFactoryConfig {
                 .addAnnotatedClass(Returns.class)
                 .addAnnotatedClass(ReturnDetail.class)
                 .addAnnotatedClass(Image.class)
+                .addAnnotatedClass(Branch.class)
                 .buildSessionFactory();
     }
 

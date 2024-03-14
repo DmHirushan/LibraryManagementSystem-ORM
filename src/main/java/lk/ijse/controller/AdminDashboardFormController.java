@@ -23,6 +23,7 @@ public class AdminDashboardFormController {
 
     public void btnCustomerOnAction(ActionEvent actionEvent) throws IOException {
         setUi("customerForm");
+        setUi("userDashbordContentForm");
     }
 
 
@@ -46,13 +47,15 @@ public class AdminDashboardFormController {
         contentContext.getChildren().setAll(fxml);
     }
 
-    public void btnHomeOnAction(ActionEvent actionEvent) {
+    public void btnHomeOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("userDashbordContentForm");
     }
 
     public void btnLibraryOnAction(ActionEvent actionEvent) throws IOException {
         setUi("libraryForm");
     }
 
-    public void btnBranchesOnAction(ActionEvent actionEvent) {
+    public void btnBranchesOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("branchForm");
     }
 }

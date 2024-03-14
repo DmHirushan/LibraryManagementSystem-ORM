@@ -4,6 +4,7 @@ import lk.ijse.dto.BookDto;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.entity.Book;
 import lk.ijse.projection.BookIdsAndTitles;
+import lk.ijse.projection.BookTitles;
 import lk.ijse.repository.BookRepository;
 import lk.ijse.repository.RepositoryFactory;
 import lk.ijse.service.BookService;
@@ -17,6 +18,7 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
     private Session session;
     BookRepository bookRepository = (BookRepository) RepositoryFactory.getRepositoryFactory().getRepository(RepositoryFactory.RepositoryTypes.BOOK);
+
     @Override
     public Long save(BookDto bookDto) {
         session = SessionFactoryConfig.getInstance().getSession();
@@ -100,4 +102,30 @@ public class BookServiceImpl implements BookService {
         }
 
     }
+
+    @Override
+    public List<BookTitles> getAllTitles() {
+        session = SessionFactoryConfig.getInstance().getSession();
+        bookRepository.setSession(session);
+        List<BookTitles> titles = bookRepository.getTitles();
+        session.close();
+        return titles;
+    }
+
+    @Override
+    public BookDto getIdByTitle(String title) {
+        session = SessionFactoryConfig.getInstance().getSession();
+        bookRepository.setSession(session);
+        return bookRepository.get(bookRepository.getIdByTitle(title)).toDto();
+    }
+
+    @Override
+    public Long getBookCount() {
+        session = SessionFactoryConfig.getInstance().getSession();
+        bookRepository.setSession(session);
+        Long bookCount = bookRepository.getBookCount();
+        session.close();
+        return bookCount;
+    }
+
 }

@@ -12,4 +12,5 @@ public interface CustomerRepository extends CrudRepository <Customer, Long> {
     public List<CustomerIds> getAllIds();
     public Long isExists(String username);
     public Customer getCustomerUsingUsername(String username);
+    public Long getCustomerCount();
 }

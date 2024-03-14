@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="653.0" prefWidth="1041.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UserDashbordContentFormController">
+   <children>
+      <Separator layoutY="346.0" prefHeight="0.0" prefWidth="1041.0" style="-fx-background-color: blue;" />
+      <Label fx:id="lblLibraryName" layoutX="38.0" layoutY="28.0" prefHeight="59.0" prefWidth="277.0" text="BOOK WORM" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="41.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="214.0" fitWidth="183.0" layoutX="114.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/9781.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="214.0" fitWidth="201.0" layoutX="451.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/book1.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="214.0" fitWidth="201.0" layoutX="767.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/9783.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="150.0" layoutY="119.0" prefHeight="199.0" prefWidth="204.0" style="-fx-background-color: white;" styleClass="totalBookCountLabel" stylesheets="@../styles.css" />
+      <Label layoutX="154.0" layoutY="121.0" prefHeight="166.0" prefWidth="197.0" style="-fx-background-color: grey;" />
+      <Label layoutX="169.0" layoutY="137.0" prefHeight="51.0" prefWidth="173.0" text="Total Books" textFill="#2fff47">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblBookCount" layoutX="212.0" layoutY="205.0" prefHeight="45.0" prefWidth="83.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="570.0" layoutY="119.0" prefHeight="199.0" prefWidth="204.0" style="-fx-background-color: white;" styleClass="totalBookCountLabel" stylesheets="@../styles.css" />
+      <Label layoutX="574.0" layoutY="122.0" prefHeight="166.0" prefWidth="197.0" style="-fx-background-color: grey;" />
+      <Label layoutX="590.0" layoutY="137.0" prefHeight="51.0" prefWidth="167.0" text="Total Members" textFill="#2fff47">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMemberCount" layoutX="631.0" layoutY="205.0" prefHeight="45.0" prefWidth="83.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

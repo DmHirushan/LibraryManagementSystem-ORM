@@ -2,13 +2,16 @@ package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.embeded.NameIdentifier;
 import lk.ijse.entity.Customer;
 import lk.ijse.service.CustomerService;
 import lk.ijse.service.ServiceFactory;
 
+import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
 public class SignInFormController {
@@ -22,10 +25,15 @@ public class SignInFormController {
     public TextField txtPassword;
     public TextField txtConfirmPassword;
     CustomerService customerService = (CustomerService) ServiceFactory.getServiceFactory().getService(ServiceFactory.ServiceTypes.CUSTOMER);
+    boolean validate = false;
 
+    public void initialize(){
+        validateCustomer();
+    }
     public void txtSignOnAction(ActionEvent actionEvent) {
+
         Long id = Long.valueOf(0);
-        if (true) {
+        if (validate) {
             if (txtPassword.getText().equals(txtConfirmPassword.getText())) {
                 NameIdentifier nameIdentifier = new NameIdentifier(
                         txtFname.getText(),
@@ -52,35 +60,48 @@ public class SignInFormController {
                 new Alert(Alert.AlertType.CONFIRMATION, "something went wrong!").show();
             }
 
+        }else {
+            new Alert(Alert.AlertType.WARNING, "please fill all the fields correctly!").show();
         }
     }
 
-    private boolean validateCustomer() {
-        if (Pattern.matches("[A-Z]\\w{3,}", txtFname.getText())){
-            if (Pattern.matches("[A-Z]\\w{3,}", txtMname.getText())){
-                if (Pattern.matches("[A-Z]\\w{3,}", txtLname.getText())){
-                    if (Pattern.matches("[A-Z]\\w{3,}", txtCity.getText())){
-                        if (Pattern.matches("\\d{1,}", txtAge.getText())){
-                            if (Pattern.matches("\\w+@\\w+\\.\\w+", txtEmail.getText())){
-                                if (Pattern.matches(" ", txtUsername.getText())){
-                                    return true;
+    
+    private void validateCustomer() {
+        if (validate(txtFname, "[a-zA-Z]*")) {
+            if (validate(txtMname, "[a-zA-Z]*")) {
+                if (validate(txtLname, "[a-zA-Z]*")) {
+                    if (validate(txtCity, "[a-zA-Z]*")) {
+                        if (validate(txtAge, "\\d{1,}")) {
+                            if (validate(txtEmail, "\\w+@\\w+\\.\\w+")) {
+                                if (validate(txtUsername, "[a-zA-Z0-9_]{3,10}")) {
+                                    if (validate(txtPassword, "[a-zA-Z0-9_]{3,16}")) {
+                                        validate = true;
+                                    }
                                 }
                             }
                         }
                     }
-                }else {
-
                 }
-            }else {
-
             }
-        }else {
-            new Alert(Alert.AlertType.ERROR, "First Name invalid!").show();
-            txtFname.setStyle("-fx-border-color: red; -fx-border-width: 5px");
         }
-        return false;
     }
 
+    public boolean validate(TextField textField, String regex){
+        textField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.isEmpty()) {
+                textField.setStyle("-fx-border-color: #ff7373; -fx-border-width: 2px;");
+            } else if (!newValue.matches(regex)) {
+                textField.setStyle("-fx-border-color: #d90505; -fx-border-width: 2px;");
+            } else if (newValue.matches(regex)) {
+                textField.setStyle("-fx-border-color: #0fceeb; -fx-border-width: 2px;");
+            }
+
+        });
+        return true;
+    }
+
+
     public void btnCancelOnAction(ActionEvent actionEvent) {
+
     }
 }

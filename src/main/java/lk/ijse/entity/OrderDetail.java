@@ -1,5 +1,6 @@
 package lk.ijse.entity;
 
+import lk.ijse.dto.OrderDetailDto;
 import lk.ijse.embeded.OrderDetailPrimaryKey;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,4 +26,11 @@ public class OrderDetail {
     @ManyToOne
     @JoinColumn(name = "isbn", referencedColumnName = "isbn", insertable = false, updatable = false)
     private Book book;
+
+    public OrderDetailDto toDto(){
+        OrderDetailDto orderDetailDto = new OrderDetailDto();
+        orderDetailDto.setOrderDetailPrimaryKey(orderDetailPrimaryKey);
+        orderDetailDto.setBook(book);
+        return orderDetailDto;
+    }
 }

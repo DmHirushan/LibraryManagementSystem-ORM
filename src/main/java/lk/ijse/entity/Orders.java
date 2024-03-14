@@ -65,11 +65,14 @@ public class Orders {
         this.customer=customer;
     }
 
-    public void toDto(){
+    public OrdersDto toDto(){
         OrdersDto ordersDto = new OrdersDto();
         ordersDto.setOrderId(orderId);
-        //ordersDto.setDate(dateTime);
+        ordersDto.setDate(LocalDate.from(dateTime));
         ordersDto.setDueDate(dueDate);
         ordersDto.setCustomer(customer);
+        ordersDto.setReturnedDate(returnedDate);
+        return ordersDto;
     }
+
 }

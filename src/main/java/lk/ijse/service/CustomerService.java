@@ -11,8 +11,9 @@ public interface CustomerService extends SuperService{
     public List<CustomerDto> getAll();
     public List<CustomerIds> getAllIds();
     public CustomerDto get(long id);
-    public void update(CustomerDto customerDto);
+    public boolean update(CustomerDto customerDto);
     public void delete(CustomerDto customerDto);
     public boolean isExists(String username);
     public CustomerDto getCustomerUsingUsername(String username);
+    public Long getCustomerCount();
 }

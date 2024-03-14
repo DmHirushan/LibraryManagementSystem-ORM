@@ -7,6 +7,7 @@ import lk.ijse.repository.CustomerRepository;
 import lk.ijse.repository.RepositoryFactory;
 import lk.ijse.service.CustomerService;
 import lk.ijse.util.SessionFactoryConfig;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -64,13 +65,23 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void update(CustomerDto customerDto) {
+    public boolean update(CustomerDto customerDto) {
         session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        customerRepository.setSession(session);
-        customerRepository.update(customerDto.toEntity());
-        transaction.commit();
-        session.close();
+        try{
+            customerRepository.setSession(session);
+            customerRepository.update(customerDto.toEntity());
+            transaction.commit();
+            session.close();
+            return true;
+        } catch (HibernateException e) {
+            transaction.rollback();
+            session.close();
+            e.printStackTrace();
+            return false;
+        }
+
+
     }
 
     @Override
@@ -98,5 +109,14 @@ public class CustomerServiceImpl implements CustomerService {
         Customer customer = customerRepository.getCustomerUsingUsername(username);
         session.close();
         return customer.toDto();
+    }
+
+    @Override
+    public Long getCustomerCount() {
+        session = SessionFactoryConfig.getInstance().getSession();
+        customerRepository.setSession(session);
+        Long customerCount = customerRepository.getCustomerCount();
+        session.close();
+        return customerCount;
     }
 }

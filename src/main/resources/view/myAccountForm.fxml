@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="673.0" prefWidth="1192.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.MyAccountFormController">
+   <children>
+      <Label fx:id="lblName" layoutX="49.0" layoutY="26.0" prefHeight="52.0" prefWidth="571.0" text="name" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="49.0" layoutY="158.0" prefHeight="35.0" prefWidth="113.0" text="City" textFill="#fffbfb">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="328.0" prefHeight="35.0" prefWidth="113.0" text="E-Mail" textFill="#fffbfb">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="408.0" prefHeight="40.0" prefWidth="144.0" text="Username" textFill="#fffbfb">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="243.0" prefHeight="35.0" prefWidth="113.0" text="Age" textFill="#fffbfb">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCity" layoutX="224.0" layoutY="167.0" prefHeight="37.0" prefWidth="282.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAge" layoutX="224.0" layoutY="251.0" prefHeight="37.0" prefWidth="282.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtEmail" layoutX="224.0" layoutY="334.0" prefHeight="37.0" prefWidth="282.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtUsername" layoutX="224.0" layoutY="416.0" prefHeight="37.0" prefWidth="282.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="590.0" orientation="VERTICAL" prefHeight="673.0" prefWidth="0.0" />
+      <Label layoutX="635.0" layoutY="52.0" prefHeight="40.0" prefWidth="246.0" text="Change Password" textFill="RED">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="635.0" layoutY="138.0" prefHeight="40.0" prefWidth="254.0" text="enter current password :  " textFill="#fffbfb">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCurrentPassword" layoutX="900.0" layoutY="140.0" prefHeight="32.0" prefWidth="216.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label layoutX="635.0" layoutY="250.0" prefHeight="40.0" prefWidth="254.0" text="enter new password :  " textFill="#fffbfb">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="634.0" layoutY="351.0" prefHeight="40.0" prefWidth="254.0" text="confirm new password :  " textFill="#fffbfb">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNewPassword" layoutX="900.0" layoutY="252.0" prefHeight="32.0" prefWidth="216.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtConfirmPassword" layoutX="900.0" layoutY="353.0" prefHeight="32.0" prefWidth="216.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button layoutX="979.0" layoutY="494.0" mnemonicParsing="false" onAction="#changePasswordOnAction" text="change password">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="336.0" layoutY="500.0" mnemonicParsing="false" onAction="#btnChangeAccountDetailsOnAction" text="change account details">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="455.0" layoutY="623.0" mnemonicParsing="false" onAction="#btnDeleteAccountOnAction" opacity="0.83" style="-fx-background-color: red;" text="Delete Acoount" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
