@@ -67,4 +67,16 @@ public class OrderDetailServiceImpl implements OrderDetailService {
         }
         return dtoList;
     }
+
+    @Override
+    public List<OrderDetailDto> getAll() {
+        session = SessionFactoryConfig.getInstance().getSession();
+        orderDetailRepository.setSession(session);
+        List<OrderDetail> all = orderDetailRepository.getAll();
+        List<OrderDetailDto> dtoList = new ArrayList<>();
+        for (OrderDetail orderDetail : all){
+            dtoList.add(orderDetail.toDto());
+        }
+        return dtoList;
+    }
 }

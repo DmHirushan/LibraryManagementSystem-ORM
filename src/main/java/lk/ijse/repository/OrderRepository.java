@@ -11,4 +11,5 @@ public interface OrderRepository extends CrudRepository <Orders, Long>{
     public Long getBookCount(Customer customer);
     public List<Orders> getOrderByCusId(Customer customer);
     public List<Orders> getById(Long id);
+    public List<Orders> getAll();
 }

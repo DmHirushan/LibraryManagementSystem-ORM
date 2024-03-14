@@ -79,4 +79,13 @@ public class OrderDetailRepositoryImpl implements OrderDetailRepository {
         return resultList;
     }
 
+    @Override
+    public List<OrderDetail> getAll() {
+        String hql = "FROM OrderDetail ";
+        org.hibernate.query.Query query = session.createQuery(hql);
+        List list = query.list();
+        session.close();
+        return list;
+    }
+
 }

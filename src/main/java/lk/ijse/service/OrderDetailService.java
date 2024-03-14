@@ -14,4 +14,5 @@ public interface OrderDetailService extends SuperService {
     public List<OrderDetailDto> getOrderDetailList(OrdersDto ordersDto);
     public OrderDetailDto get(OrdersDto ordersDto);
     public List<OrderDetailDto> get(BookDto bookDto);
+    public List<OrderDetailDto> getAll();
 }

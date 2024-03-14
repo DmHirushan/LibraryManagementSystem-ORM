@@ -62,4 +62,8 @@ public class AdminDashboardFormController {
     public void btnNotReturned(ActionEvent actionEvent) throws IOException {
         setUi("notReturnedForm");
     }
+
+    public void btnHistoryOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("transactionHistoryForm");
+    }
 }

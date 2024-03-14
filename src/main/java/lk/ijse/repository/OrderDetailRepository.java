@@ -11,4 +11,5 @@ public interface OrderDetailRepository extends CrudRepository <OrderDetail, Long
     public List<OrderDetail> getOrderDetailList(Orders orders);
     public OrderDetail get(Orders orders);
     public List<OrderDetail> get(Book book);
+    public List<OrderDetail> getAll();
 }

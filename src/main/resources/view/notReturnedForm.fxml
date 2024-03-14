@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.controller.NotReturnedFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="653.0" prefWidth="1041.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.NotReturnedFormController">
+   <children>
+      <TableView fx:id="tblNotReturnedMembers" layoutX="93.0" layoutY="182.0" prefHeight="261.0" prefWidth="857.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="125.0" text="Member ID" />
+          <TableColumn fx:id="colName" prefWidth="154.0" text="Name" />
+            <TableColumn fx:id="colCity" prefWidth="154.0" text="City" />
+            <TableColumn fx:id="colEmail" prefWidth="154.0" text="E-Mail" />
+            <TableColumn prefWidth="154.0" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

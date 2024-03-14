@@ -15,5 +15,6 @@ public interface OrderService extends SuperService {
     public List<OrdersDto> getOrderByCusId(CustomerDto customerDto);
     public OrdersDto get(Long orderId);
     public boolean update(OrdersDto ordersDto);
+    public List<OrdersDto> getAll();
     //public List<OrdersDto> getById(Long id);
 }

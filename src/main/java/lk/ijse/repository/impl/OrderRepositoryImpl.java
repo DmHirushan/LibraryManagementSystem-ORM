@@ -86,4 +86,13 @@ public class OrderRepositoryImpl implements OrderRepository {
         List<Orders> resultList = session.createQuery(criteria).getResultList();
         return resultList;
     }
+
+    @Override
+    public List<Orders> getAll() {
+        String hql = "FROM Orders ";
+        org.hibernate.query.Query query = session.createQuery(hql);
+        List list = query.list();
+        session.close();
+        return list;
+    }
 }

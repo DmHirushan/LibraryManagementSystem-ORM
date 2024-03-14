@@ -99,6 +99,18 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
+    @Override
+    public List<OrdersDto> getAll() {
+        session = SessionFactoryConfig.getInstance().getSession();
+        orderRepository.setSession(session);
+        List<Orders> all = orderRepository.getAll();
+        List<OrdersDto> dtoList = new ArrayList<>();
+        for (Orders orders : all){
+            dtoList.add(orders.toDto());
+        }
+        return dtoList;
+    }
+
     /*@Override
     public List<OrdersDto> getById(Long id) {
         session = SessionFactoryConfig.getInstance().getSession();
