@@ -69,10 +69,11 @@ public class TransactionHistoryFormController {
         for (int i=0; i<all.size(); i++){
             OrderTm orderTm = new OrderTm();
             orderTm.setOrderId(orderDetails.get(i).getOrderDetailPrimaryKey().getOrderId());
-            orderTm.setReturnedDate(all.get(i).getReturnedDate() == null ? "Not Returned Yet" : String.valueOf(all.get(i).getReturnedDate()));
-            orderTm.setCustomer(customers.get(i).getName().getFirstName()+" "+customers.get(i).getName().getMiddleName());
-            orderTm.setBookTitle(books.get(i).getTitle());
-            orderTm.setIsbn(books.get(i).getIsbn());
+            String date = String.valueOf(orderService.get(orderDetails.get(i).getOrderDetailPrimaryKey().getOrderId()).getReturnedDate());
+            orderTm.setReturnedDate(date.equals(null) ? "Not Returned Yet" : date);
+            orderTm.setCustomer(all.get(i).getCustomer().getName().getFirstName() + " " + all.get(i).getCustomer().getName().getMiddleName());
+            orderTm.setBookTitle(orderDetails.get(i).getBook().getTitle());
+            orderTm.setIsbn(orderDetails.get(i).getBook().getIsbn());
             obList.add(orderTm);
         }
 

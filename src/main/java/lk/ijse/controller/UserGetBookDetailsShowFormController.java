@@ -52,7 +52,7 @@ public class UserGetBookDetailsShowFormController {
         colBorrowedDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colDueDate.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
         colReturnedDate.setCellValueFactory(new PropertyValueFactory<>("returnedDate"));
-        colOption.setCellValueFactory(new PropertyValueFactory<>("button"));
+        //colOption.setCellValueFactory(new PropertyValueFactory<>("button"));
     }
 
     private void loadDataTotable() {

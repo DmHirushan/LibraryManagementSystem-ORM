@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="653.0" prefWidth="1041.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.NotReturnedFormController">
    <children>
-      <TableView fx:id="tblNotReturnedMembers" layoutX="93.0" layoutY="182.0" prefHeight="261.0" prefWidth="857.0">
+      <TableView fx:id="tblNotReturnedMembers" layoutX="56.0" layoutY="189.0" prefHeight="261.0" prefWidth="935.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="125.0" text="Member ID" />
           <TableColumn fx:id="colName" prefWidth="154.0" text="Name" />
             <TableColumn fx:id="colCity" prefWidth="154.0" text="City" />
-            <TableColumn fx:id="colEmail" prefWidth="154.0" text="E-Mail" />
-            <TableColumn prefWidth="154.0" />
+            <TableColumn fx:id="colEmail" prefWidth="205.0" text="E-Mail" />
+            <TableColumn fx:id="colBook" prefWidth="148.0" text="Book" />
+            <TableColumn fx:id="colDueDate" prefWidth="148.0" text="Due Date" />
         </columns>
       </TableView>
+      <Label layoutX="56.0" layoutY="49.0" prefHeight="53.0" prefWidth="459.0" text="Still not returned after passes due date.." textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

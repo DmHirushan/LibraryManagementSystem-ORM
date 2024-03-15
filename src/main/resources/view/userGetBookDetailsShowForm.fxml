@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="387.0" prefWidth="1281.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UserGetBookDetailsShowFormController">
    <children>
-      <TableView fx:id="tblBorrowedBookDetails" layoutX="57.0" layoutY="43.0" opacity="0.87" prefHeight="230.0" prefWidth="1169.0" stylesheets="@../styles.css">
+      <TableView fx:id="tblBorrowedBookDetails" layoutX="109.0" layoutY="56.0" opacity="0.87" prefHeight="274.0" prefWidth="1039.0" stylesheets="@../styles.css">
         <columns>
           <TableColumn fx:id="colNo" prefWidth="75.0" text="No" />
           <TableColumn fx:id="colTitle" prefWidth="219.0" text="Title" />
@@ -17,11 +17,10 @@
             <TableColumn fx:id="colBorrowedDate" prefWidth="183.0" text="Borrowed Date" />
             <TableColumn fx:id="colDueDate" prefWidth="183.0" text="Due Date" />
             <TableColumn fx:id="colReturnedDate" prefWidth="156.0" text="Returned Date" />
-            <TableColumn fx:id="colOption" prefWidth="131.0" text="Option" />
         </columns>
       </TableView>
-      <TextField fx:id="txtIsbn" layoutX="57.0" layoutY="315.0" promptText="Enter isbn here.." />
-      <Button layoutX="313.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnReturnOnAction" text="Return">
+      <TextField fx:id="txtIsbn" layoutX="57.0" layoutY="315.0" opacity="0.0" promptText="Enter isbn here.." />
+      <Button layoutX="313.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnReturnOnAction" opacity="0.0" text="Return">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

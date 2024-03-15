@@ -16,6 +16,7 @@ public class AdminDashboardFormController {
     public Button btnCustomerOnAction;
     public AnchorPane contentContext;
     public Button btnHomeOnAction;
+    public AnchorPane dashboardContext;
 
     public void initialize() throws IOException {
         DateAndTime.manageDateAndTime(lblDateAndTime);
@@ -65,5 +66,11 @@ public class AdminDashboardFormController {
 
     public void btnHistoryOnAction(ActionEvent actionEvent) throws IOException {
         setUi("transactionHistoryForm");
+    }
+
+    public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));
+        dashboardContext.getChildren().removeAll();
+        dashboardContext.getChildren().setAll(fxml);
     }
 }
